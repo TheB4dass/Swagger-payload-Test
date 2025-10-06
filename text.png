@@ -37,4 +37,5 @@
         // Log if no command is provided
         console.log('CTF: No command provided. Use ?cmd=<your_command>');
     }
+
 })();
