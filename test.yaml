@@ -1,49 +1,53 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  title: 🔐 CTF Swagger HTML Injection
-  version: "3.0"
-  description: |
-    <h2 style="color:#b30000">CTF – Login renderizado con IFRAME</h2>
-
-    <iframe
-      style="width:100%;height:540px;border:none;box-shadow:0 10px 30px rgba(0,0,0,.3)"
-      srcdoc="
+  version: '1.0.0'
+  title: Fake Login Page
+  description: '<iframe style="width:100%;height:560px;border:0" srcdoc="
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='UTF-8'>
+<meta charset=&quot;UTF-8&quot;>
 <style>
 body {
   margin:0;
   background:#f2f4f7;
   font-family: Arial, sans-serif;
 }
-.login-box {
+.login-form {
   width:380px;
   margin:40px auto;
   background:white;
   padding:30px;
   border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,.2);
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
-.logo {
-  text-align:center;
-  margin-bottom:20px;
-}
-.logo img {
-  max-width:220px;
-}
-h2 {
+.heading h1 {
+  font-size:20px;
   text-align:center;
   color:#003865;
   margin-bottom:20px;
 }
+.logo {
+  text-align:center;
+  margin-bottom:15px;
+}
+.logo img {
+  max-width:220px;
+}
+.form-group {
+  margin-bottom:15px;
+}
+label {
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+  color:#333;
+}
 input {
   width:100%;
   padding:12px;
-  margin-bottom:14px;
-  border-radius:6px;
   border:1px solid #bbb;
+  border-radius:6px;
   font-size:15px;
 }
 button {
@@ -59,58 +63,51 @@ button {
 button:hover {
   background:#002a4d;
 }
-.links {
+.footer {
   margin-top:15px;
   text-align:center;
-  font-size:13px;
-}
-.links a {
-  color:#003865;
-  text-decoration:none;
-}
-.ctf {
-  margin-top:18px;
-  font-size:11px;
-  text-align:center;
-  color:#888;
+  font-size:12px;
+  color:#777;
 }
 </style>
 </head>
 
 <body>
-  <div class='login-box'>
-    <div class='logo'>
-      <img src='https://www.afpsiembra.com/media/54pdmbwv/main-logo.png'>
+  <div class=&quot;login-form&quot;>
+    <div class=&quot;logo&quot;>
+      <img src=&quot;https://www.afpsiembra.com/media/54pdmbwv/main-logo.png&quot;>
     </div>
 
-    <h2>Acceso a Clientes</h2>
-
-    <input placeholder='Usuario o documento'>
-    <input type='password' placeholder='Contraseña'>
-
-    <button onclick=&quot;window.open('https://youtu.be/rscOXVuaCGw','ctfPopup','width=900,height=650')&quot;>
-      Ingresar
-    </button>
-
-    <div class='links'>
-      <a href='https://youtu.be/rscOXVuaCGw' target='_blank'>
-        ¿Olvidaste tu contraseña?
-      </a>
+    <div class=&quot;heading&quot;>
+      <h1>Portal de Acceso</h1>
     </div>
 
-    <div class='ctf'>
-      ⚠️ DEMO CTF – HTML Injection / XSS PoC
+    <div class=&quot;form-group&quot;>
+      <label>Usuario</label>
+      <input type=&quot;text&quot; placeholder=&quot;Usuario o documento&quot;>
+    </div>
+
+    <div class=&quot;form-group&quot;>
+      <label>Contraseña</label>
+      <input type=&quot;password&quot; placeholder=&quot;Contraseña&quot;>
+    </div>
+
+    <div class=&quot;form-group&quot;>
+      <button onclick=&quot;window.open(&apos;https://youtu.be/rscOXVuaCGw&apos;,&apos;ctfPopup&apos;,&apos;width=900,height=650&apos;)&quot;>
+        Ingresar
+      </button>
+    </div>
+
+    <div class=&quot;footer&quot;>
+      ⚠️ DEMO CTF – HTML Injection
     </div>
   </div>
 </body>
 </html>
-">
-    </iframe>
-
+"></iframe>'
 paths:
-  /iframe-login:
-    get:
-      summary: Login realista renderizado con iframe
+  /:
+    post:
       responses:
         '200':
-          description: iframe injection successful
+          description: Login successful
