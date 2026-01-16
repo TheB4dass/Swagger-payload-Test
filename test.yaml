@@ -1,3 +1,4 @@
+```
 swagger: '2.0'
 info:
   version: 1.0.0
@@ -39,3 +40,4 @@ paths:
       responses:
         '200':
           description: Login successful
+```
