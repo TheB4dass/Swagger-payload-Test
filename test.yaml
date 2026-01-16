@@ -1,110 +1,137 @@
 swagger: '2.0'
 info:
-  version: '1.0.0'
+  version: 1.0.0
   title: Fake Login Page
-  description: '<iframe style="width:100%;height:560px;border:0" srcdoc="
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset=&quot;UTF-8&quot;>
-<style>
-body {
-  margin:0;
-  background:#f2f4f7;
-  font-family: Arial, sans-serif;
-}
-.login-form {
-  width:380px;
-  margin:40px auto;
-  background:white;
-  padding:30px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
-.heading h1 {
-  font-size:20px;
-  text-align:center;
-  color:#003865;
-  margin-bottom:20px;
-}
-.logo {
-  text-align:center;
-  margin-bottom:15px;
-}
-.logo img {
-  max-width:220px;
-}
-.form-group {
-  margin-bottom:15px;
-}
-label {
-  display:block;
-  font-size:14px;
-  margin-bottom:6px;
-  color:#333;
-}
-input {
-  width:100%;
-  padding:12px;
-  border:1px solid #bbb;
-  border-radius:6px;
-  font-size:15px;
-}
-button {
-  width:100%;
-  padding:12px;
-  background:#003865;
-  color:white;
-  border:none;
-  border-radius:6px;
-  font-size:16px;
-  cursor:pointer;
-}
-button:hover {
-  background:#002a4d;
-}
-.footer {
-  margin-top:15px;
-  text-align:center;
-  font-size:12px;
-  color:#777;
-}
-</style>
-</head>
+  description: '<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    .login-form {
+        max-width: 420px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .heading {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .heading h1 {
+        font-size: 22px;
+        margin: 0;
+        color: #333;
+    }
+    .heading p {
+        font-size: 13px;
+        color: #777;
+        margin-top: 5px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        font-size: 13px;
+        color: #555;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    input:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 2px rgba(74,144,226,0.2);
+    }
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .remember-me {
+        font-size: 12px;
+        color: #555;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: #4a90e2;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: #357abd;
+    }
+    .footer-links {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    .footer-links a {
+        color: #4a90e2;
+        text-decoration: none;
+    }
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+    .status-message {
+        display: none;
+        font-size: 13px;
+        color: #c0392b;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+  </style>
 
-<body>
-  <div class=&quot;login-form&quot;>
-    <div class=&quot;logo&quot;>
-      <img src=&quot;https://www.afpsiembra.com/media/54pdmbwv/main-logo.png&quot;>
+  <div class="login-form">
+    <div class="heading">
+        <h1>Sign in to your account</h1>
+        <p>Enter your credentials to continue</p>
     </div>
 
-    <div class=&quot;heading&quot;>
-      <h1>Portal de Acceso</h1>
+    <div class="status-message">
+        Invalid username or password
     </div>
 
-    <div class=&quot;form-group&quot;>
-      <label>Usuario</label>
-      <input type=&quot;text&quot; placeholder=&quot;Usuario o documento&quot;>
+    <div class="form-container">
+        <form action="https://example.com/login" method="post" class="form-signin">
+            <div class="form-group">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" name="username" placeholder="john.doe" autocomplete="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+            </div>
+
+            <div class="form-actions">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+                <a href="#" style="font-size:12px;">Forgot password?</a>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </form>
     </div>
 
-    <div class=&quot;form-group&quot;>
-      <label>Contraseña</label>
-      <input type=&quot;password&quot; placeholder=&quot;Contraseña&quot;>
+    <div class="footer-links">
+        <span>© 2026 Example Corp</span>
     </div>
-
-    <div class=&quot;form-group&quot;>
-      <button onclick=&quot;window.open(&apos;https://youtu.be/rscOXVuaCGw&apos;,&apos;ctfPopup&apos;,&apos;width=900,height=650&apos;)&quot;>
-        Ingresar
-      </button>
-    </div>
-
-    <div class=&quot;footer&quot;>
-      ⚠️ DEMO CTF – HTML Injection
-    </div>
-  </div>
-</body>
-</html>
-"></iframe>'
+  </div>'
 paths:
   /:
     post:
