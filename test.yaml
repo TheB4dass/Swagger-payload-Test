@@ -1,14 +1,16 @@
 swagger: "2.0"
 info:
   title: |
-    🔥 CTF HTML INJECTION DEMO
-  version: "1.0"
+    🔥 Swagger UI HTML Injection – CTF DEMO
+  version: "2.0"
   description: |
-    <h1 style="color:#c00">CTF DEMO – Swagger UI Vulnerable</h1>
+    <h2 style="color:#b30000">CTF – HTML Injection Confirmada</h2>
 
-    <iframe width="100%" height="315"
+    <!-- VIDEO -->
+    <iframe width="100%" height="360"
       src="https://www.youtube.com/embed/rscOXVuaCGw"
       frameborder="0"
+      allow="autoplay; encrypted-media"
       allowfullscreen>
     </iframe>
 
@@ -16,38 +18,60 @@ info:
 
     <div style="display:flex;gap:20px;flex-wrap:wrap">
 
-      <!-- PANEL FAKE 1 -->
-      <div style="border:2px dashed red;padding:20px;width:300px">
+      <!-- PANEL 1 -->
+      <div style="border:2px solid #d00;padding:20px;width:320px">
         <h3>⚠️ Fake Login Panel (CTF)</h3>
-        <input placeholder="Usuario (demo)" style="width:100%;margin-bottom:10px">
-        <input placeholder="Contraseña (demo)" type="password" style="width:100%;margin-bottom:10px">
-        <button onclick="alert('CTF DEMO POPUP')">
-          Demo Popup
+
+        <input placeholder="Usuario (demo)"
+          style="width:100%;margin-bottom:10px">
+
+        <input type="password"
+          placeholder="Password (demo)"
+          style="width:100%;margin-bottom:15px">
+
+        <button
+          onclick="window.open('https://youtu.be/rscOXVuaCGw','popup1','width=800,height=600')"
+          style="width:100%;padding:10px;background:#d00;color:#fff">
+          Abrir Popup (window.open)
         </button>
-        <br><br>
-        <a href="https://youtu.be/rscOXVuaCGw" target="_blank">
-          Ir al video
-        </a>
       </div>
 
-      <!-- PANEL FAKE 2 -->
-      <div style="border:2px dashed blue;padding:20px;width:300px">
+      <!-- PANEL 2 -->
+      <div style="border:2px solid #0066a1;padding:20px;width:320px">
         <h3>⚠️ Fake Admin Panel (CTF)</h3>
-        <button onclick="window.location.href='https://youtu.be/rscOXVuaCGw'">
-          Redirect Demo
+
+        <button
+          onclick="location.href='https://youtu.be/rscOXVuaCGw'"
+          style="width:100%;padding:10px;background:#0066a1;color:#fff">
+          Redirección directa
+        </button>
+
+        <br><br>
+
+        <button
+          onclick="window.open('https://youtu.be/rscOXVuaCGw','popup2')"
+          style="width:100%;padding:10px">
+          Popup secundario
         </button>
       </div>
 
     </div>
 
 paths:
-  /demo:
+  /popup-test:
     get:
-      summary: HTML Injection Proof
+      summary: Popup & Redirect Test
       description: |
-        <button onclick="alert('XSS / HTML Injection Confirmed')">
-          Click me (CTF)
+        <button
+          onclick="window.open('https://youtu.be/rscOXVuaCGw','ctfpopup','width=900,height=700')">
+          Popup desde endpoint
         </button>
+
+        <br><br>
+
+        <a href="https://youtu.be/rscOXVuaCGw" target="_blank">
+          Abrir video en nueva pestaña
+        </a>
       responses:
         '200':
-          description: Injection successful
+          description: Popup demo OK
