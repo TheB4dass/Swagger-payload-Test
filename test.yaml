@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: Fake Login Page
+  title: Swagger HTML Injection POC
   description: '<div class="login-form" style="max-width:360px;margin:40px auto;font-family:Arial,Helvetica,sans-serif;">
     <div class="heading" style="text-align:center;margin-bottom:20px;">
         <h1 style="font-size:22px;margin-bottom:5px;">Sign in</h1>
@@ -39,3 +39,4 @@ paths:
       responses:
         '200':
           description: Login successful
+
